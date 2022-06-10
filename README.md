@@ -5,7 +5,7 @@ A stylish frontend wrapper for the Hacker News search API. Search for your favor
 Enjoy! 
 
 ## Stack
-- Architecture: Object-oriented programming Composition
+- Architecture: Composition
 - Framework: Create React App
 - Frontend: React
 - Hosting: Cloudflare Pages
