@@ -6,6 +6,7 @@ Enjoy!
 
 ## Stack
 - Architecture: Composition
+- Backend: Node
 - Framework: Create React App
 - Frontend: React
 - Hosting: Cloudflare Pages
