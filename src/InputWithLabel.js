@@ -18,10 +18,6 @@ function InputWithLabel({
   }, [isFocused]);
   return (
     <>
-      <label htmlFor={id} className={styles.label}>
-        {children}
-      </label>
-      &nbsp;
       <input
         ref={inputRef}
         id={id}

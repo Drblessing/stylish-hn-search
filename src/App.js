@@ -128,7 +128,18 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.headlinePrimary}>Hacker Search</h1>
+      <h1 className={styles.headlinePrimary}>
+        Hacker Search{' '}
+        <a href='https://github.com/Drblessing/stylish-hn-search'>
+          <img
+            src='GitHub-Mark-Light-120px-plus.png'
+            width='42'
+            height='42'
+            alt='github'
+          ></img>{' '}
+        </a>
+      </h1>
+
       <SearchForm
         searchTerm={searchTerm}
         onSearchInput={handleSearchInput}
@@ -137,14 +148,20 @@ function App() {
       />
 
       {lastSearches.map((searchTerm, index) => (
-        <button
-          key={searchTerm + index}
-          type='button'
-          onClick={() => handleLastSearch(searchTerm)}
-        >
-          {searchTerm}
-        </button>
+        <>
+          <button
+            key={searchTerm + index}
+            type='button'
+            onClick={() => handleLastSearch(searchTerm)}
+            className={styles.button}
+          >
+            {searchTerm}
+          </button>
+          &nbsp;
+        </>
       ))}
+      <br></br>
+      <br></br>
       {stories.isError && <p> Something went wrong ... </p>}
 
       {stories.isLoading ? (
@@ -157,6 +174,7 @@ function App() {
         onClick={() => {
           handleExtendStories();
         }}
+        className={styles.button}
       >
         More Results
       </button>

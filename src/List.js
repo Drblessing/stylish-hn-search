@@ -1,18 +1,18 @@
-import React from "react";
-import styles from "./App.module.css";
-import { orderBy } from "lodash";
+import React from 'react';
+import styles from './App.module.css';
+import { orderBy } from 'lodash';
 
 function List({ list, onRemoveItem }) {
   const SORTS = {
     NONE: (list) => list,
-    TITLE: (list) => orderBy(list, "title", toggle ? "asc" : "desc"),
-    AUTHOR: (list) => orderBy(list, "author", toggle ? "asc" : "desc"),
-    COMMENT: (list) => orderBy(list, "num_comments", toggle ? "asc" : "desc"),
-    POINT: (list) => orderBy(list, "points", toggle ? "asc" : "desc"),
+    TITLE: (list) => orderBy(list, 'title', toggle ? 'asc' : 'desc'),
+    AUTHOR: (list) => orderBy(list, 'author', toggle ? 'asc' : 'desc'),
+    COMMENT: (list) => orderBy(list, 'num_comments', toggle ? 'asc' : 'desc'),
+    POINT: (list) => orderBy(list, 'points', toggle ? 'asc' : 'desc'),
   };
 
   const [toggle, setToggle] = React.useState(false);
-  const [sort, setSort] = React.useState("NONE");
+  const [sort, setSort] = React.useState('NONE');
   const [activeSort, setActiveSort] = React.useState(null);
   const handleSort = (sortKey) => {
     if (sort === sortKey) setToggle(!toggle);
@@ -25,57 +25,57 @@ function List({ list, onRemoveItem }) {
 
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        <span style={{ width: "40%" }}>
+      <div style={{ display: 'flex' }}>
+        <span style={{ width: '40%' }}>
           <button
-            type="button"
+            type='button'
             onClick={() => {
-              handleSort("TITLE");
+              handleSort('TITLE');
             }}
             className={`${styles.button} ${styles.buttonSmall} ${
-              activeSort === "TITLE" ? styles.activeSort : ""
+              activeSort === 'TITLE' ? styles.activeSort : ''
             }`}
           >
-            Title {activeSort === "TITLE" ? (toggle ? "▼" : "▲") : ""}
+            Title {activeSort === 'TITLE' ? (toggle ? '▼' : '▲') : ''}
           </button>
         </span>
-        <span style={{ width: "30%" }}>
+        <span style={{ width: '30%' }}>
           <button
-            type="button"
+            type='button'
             onClick={() => {
-              handleSort("AUTHOR");
+              handleSort('AUTHOR');
             }}
             className={`${styles.button} ${styles.buttonSmall} ${
-              activeSort === "AUTHOR" ? styles.activeSort : ""
+              activeSort === 'AUTHOR' ? styles.activeSort : ''
             }`}
           >
-            Author {activeSort === "AUTHOR" ? (toggle ? "▼" : "▲") : ""}
+            Author {activeSort === 'AUTHOR' ? (toggle ? '▼' : '▲') : ''}
           </button>
         </span>
-        <span style={{ width: "10%" }}>
+        <span style={{ width: '10%' }}>
           <button
-            type="button"
+            type='button'
             onClick={() => {
-              handleSort("COMMENT");
+              handleSort('COMMENT');
             }}
             className={`${styles.button} ${styles.buttonSmall} ${
-              activeSort === "COMMENT" ? styles.activeSort : ""
+              activeSort === 'COMMENT' ? styles.activeSort : ''
             }`}
           >
-            Num Comments {activeSort === "COMMENT" ? (toggle ? "▼" : "▲") : ""}
+            Num Comments {activeSort === 'COMMENT' ? (toggle ? '▼' : '▲') : ''}
           </button>
         </span>
-        <span style={{ width: "10%" }}>
+        <span style={{ width: '10%' }}>
           <button
-            type="button"
+            type='button'
             onClick={() => {
-              handleSort("POINT");
+              handleSort('POINT');
             }}
             className={`${styles.button} ${styles.buttonSmall} ${
-              activeSort === "POINT" ? styles.activeSort : ""
+              activeSort === 'POINT' ? styles.activeSort : ''
             }`}
           >
-            Points {activeSort === "POINT" ? (toggle ? "▼" : "▲") : ""}
+            Points {activeSort === 'POINT' ? (toggle ? '▼' : '▲') : ''}
           </button>
         </span>
       </div>
@@ -93,15 +93,15 @@ function List({ list, onRemoveItem }) {
 function Item({ item, onRemoveItem }) {
   return (
     <div className={styles.item}>
-      <span style={{ width: "40%" }}>
+      <span style={{ width: '40%', color: 'white' }}>
         <a href={item.url}>{item.title} </a>
       </span>
-      <span style={{ width: "30%" }}>{item.author} </span>
-      <span style={{ width: "10%" }}>{item.num_comments} </span>
-      <span style={{ width: "10%" }}>{item.points} </span>
-      <span style={{ width: "10%" }}>
+      <span style={{ width: '30%', color: 'white' }}>{item.author} </span>
+      <span style={{ width: '10%', color: 'white' }}>{item.num_comments} </span>
+      <span style={{ width: '10%', color: 'white' }}>{item.points} </span>
+      <span style={{ width: '10%', color: 'white' }}>
         <button
-          type="button"
+          type='button'
           onClick={() => onRemoveItem(item)}
           className={`${styles.button} ${styles.buttonSmall}`}
         >
