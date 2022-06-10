@@ -1,6 +1,6 @@
 # Stylish Hacker News Search 🔎
 
-A stylish frontend wrapper for the Hacker News search api. Search for your favorite topics and sort the results to find the most compelling content. 
+A stylish frontend wrapper for the Hacker News search API. Search for your favorite topics and sort the results to find the most compelling content. 
 
 Enjoy! 
 
